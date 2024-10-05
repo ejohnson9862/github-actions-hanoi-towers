@@ -1,0 +1,16 @@
+name: List Files
+
+on:
+  workflow_dispatch:  # This allows the workflow to be triggered manually via the GitHub UI
+
+jobs:
+  list_files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: List files in the repository
+        run: |
+          echo "Listing files in the repository:"
+          ls -R # This lists all files recursively
