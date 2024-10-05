@@ -1,0 +1,22 @@
+name: List Files
+
+on:
+  push:
+    branches:
+      - main  # Change to your desired branch
+  pull_request:
+    branches:
+      - main  # Change to your desired branch
+
+jobs:
+  list-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: List files
+        run: |
+          echo "Listing all files in the repository:"
+          ls -R
